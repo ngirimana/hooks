@@ -22,6 +22,9 @@ const Ingredients = () => {
         setUserIngredients(loadedIngredients)
       })
   },[])
+  useEffect(()=>{
+    console.log('RENDERING INGREDIENTS',userIngredients)
+  },[userIngredients])
   const addIngredientHandler = ingredient => {
     fetch('https://react-hooks-update-b527f.firebaseio.com/ingredients.json', {
       method: 'POST',
